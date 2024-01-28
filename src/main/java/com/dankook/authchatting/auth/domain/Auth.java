@@ -54,7 +54,7 @@ public class Auth {
     public Auth(String account, String password, Member member, PasswordEncoder encoder) {
         this.account = account;
         this.password = encoder.encode(password);
-        this.type = AuthType.USER;
+        this.type = AuthType.MEMBER;
         this.member = member;
     }
 

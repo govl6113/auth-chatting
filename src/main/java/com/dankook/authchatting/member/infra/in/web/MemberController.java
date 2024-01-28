@@ -3,8 +3,10 @@ package com.dankook.authchatting.member.infra.in.web;
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dankook.authchatting.member.application.MemberService;
@@ -15,10 +17,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/member")
+@PreAuthorize("hasAuthority('MEMBER')")
 public class MemberController {
     private final MemberService memberService;
 
-    @GetMapping("/me")
+    @GetMapping()
     public ResponseEntity<MemberResponse> me(
             @Parameter(hidden = true) Authentication authentication
     ) {
@@ -26,5 +30,5 @@ public class MemberController {
                 new MemberResponse(memberService.getById(UUID.fromString(authentication.getName())))
         );
     }
-    
+
 }

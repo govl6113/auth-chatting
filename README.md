@@ -1,9 +1,5 @@
 ### chat
 
-websocket용, STOMP 둘 중 하나만 보내면 됨.
-
-<br>
-
 ###### HTTP는 연결을 지속하지 않고, 클라이언트가 서버로 단방향 요청만 가능하다.
 
 ###### websorket은 statefull한 성격으로 실시간 통신이 필요한 채팅에서 hankshaking 과정을 덜어줌. but. 현재 누가 접속중인지 알아야 함. (채팅방마다 세션 관리 필요)
@@ -23,9 +19,9 @@ websocket용, STOMP 둘 중 하나만 보내면 됨.
       consumer가 topic을 가져간 후에도 이벤트 스트림에서 로그를 계속 유지하기 때문에 에러나 기타 문제가 생겼을 경우 이벤트를 재생할 수 있음.
     - 전통적인 메시지 브로커(RabbitMQ)에 비해 좀 더 유연하고 느슨한 결합을 가능 -> 격리와 확장이 쉬움.
     - Zookeeper가 실행중이여야 사용 가능. Zookeeper는 분산 코디네이션 시스템을 제공합니다. Kafaka Cluster의 리더를 발탁하는 방식도 Zookeeper가 제공하고
-      있습니다.
+      있음.
 
-<br>용
+<br>
 => RabbitMQ는 설정을 조금 추가해주면 사용할 수 있음. (https://brunch.co.kr/@springboot/695)
 
 => Kafka는 살짝 어렵고 라우팅이 불가능.

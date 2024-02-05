@@ -4,7 +4,6 @@ import java.security.Key;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -83,8 +82,10 @@ public class TokenProviderImpl implements TokenProvider {
     }
 
     @Override
-    public UUID parseMemberId(String token) {
-        return UUID.fromString(getClaims(token).get("memberId", String.class));
+    public Long parseMemberId(String token) {
+        System.out.println("token is " + token);
+
+        return getClaims(token).get("memberId", Long.class);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package com.dankook.authchatting.member.infra.in.web;
 
-import java.util.UUID;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -27,7 +25,7 @@ public class MemberController {
             @Parameter(hidden = true) Authentication authentication
     ) {
         return ResponseEntity.ok().body(
-                new MemberResponse(memberService.getById(UUID.fromString(authentication.getName())))
+                new MemberResponse(memberService.getById(Long.parseLong(authentication.getName())))
         );
     }
 

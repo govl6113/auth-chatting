@@ -1,7 +1,6 @@
 package com.dankook.authchatting.auth.domain;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -36,8 +35,8 @@ public class Auth {
     @JoinColumn(name = "member_id", nullable = false)
     Member member;
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(nullable = false, unique = true)
     private String account;
     @Column(nullable = false)

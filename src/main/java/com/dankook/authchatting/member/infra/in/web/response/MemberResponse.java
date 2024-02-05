@@ -1,7 +1,5 @@
 package com.dankook.authchatting.member.infra.in.web.response;
 
-import java.util.UUID;
-
 import com.dankook.authchatting.member.domain.Member;
 
 import lombok.AllArgsConstructor;
@@ -14,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MemberResponse {
 
-    UUID id;
+    Long id;
     String name;
 
     @Builder

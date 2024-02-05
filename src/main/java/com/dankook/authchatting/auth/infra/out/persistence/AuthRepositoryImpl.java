@@ -1,7 +1,5 @@
 package com.dankook.authchatting.auth.infra.out.persistence;
 
-import java.util.UUID;
-
 import org.springframework.stereotype.Repository;
 
 import com.dankook.authchatting.auth.domain.Auth;
@@ -22,7 +20,7 @@ public class AuthRepositoryImpl implements AuthRepository {
     }
 
     @Override
-    public Auth getById(UUID id) {
+    public Auth getById(Long id) {
         return authRepository.findById(id).orElseThrow(NotFoundAuthException::new);
     }
 
@@ -32,7 +30,7 @@ public class AuthRepositoryImpl implements AuthRepository {
     }
 
     @Override
-    public Auth getByMemberId(UUID memberId) {
+    public Auth getByMemberId(Long memberId) {
         return authRepository.findByMemberId(memberId).orElseThrow(NotFoundAuthException::new);
     }
 }

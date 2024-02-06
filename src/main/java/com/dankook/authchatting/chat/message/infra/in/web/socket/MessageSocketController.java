@@ -27,7 +27,7 @@ public class MessageSocketController { //socket 용
     private final MessageService messageService;
     private final TokenProvider tokenProvider;
 
-    //     client에서 메세지 발행할 땐 "/pub/chat/room/{roomId}로 보내야함.
+    //    client에서 메세지 발행할 땐 "/pub/chat/room/{roomId}로 보내야함.
     @MessageMapping("/chat/room/{roomId}")
     @SendTo("/sub/chat/room/{roomId}")
     public ChatMessageResponse handleMessageWithSendTo(
@@ -84,10 +84,14 @@ public class MessageSocketController { //socket 용
      *
      *     // /pub/chat/exit 에 메세지가 오면 동작
      *     @MessageMapping(value = "/exit/message")
+<<<<<<< HEAD
      *     public void exit(ChatRequestDto message){ // 채팅방 입장
      *         message.setMessage(message.getWriter() + "님이 채팅방에서 퇴장하셨습니다.");
      *         template.convertAndSend("/sub/chat/" + message.getRoomId(), message);
      *     }
+=======
+     *
+>>>>>>> origin/chatting
      *     test방법: apic
      *     https://velog.io/@hyewon0218/Stomp%EB%A1%9C-%EC%B1%84%ED%8C%85-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0
      */

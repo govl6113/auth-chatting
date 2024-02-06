@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 public class MessageController {
     private final MessageService messageService;
 
-    // rest는 보통 잘 안 쓰지만 쉬운 테스트를 위해 사용
+    // rest는 잘 안 쓰지만 쉬운 테스트를 위해 사용
     @PostMapping("/{roomId}")
     public void send(@PathVariable Long roomId, Authentication authentication, SendChatMessageRequest request) {
         messageService.send(false, Long.parseLong(authentication.getName()), roomId, request);

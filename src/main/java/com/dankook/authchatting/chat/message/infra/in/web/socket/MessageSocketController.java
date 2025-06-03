@@ -67,8 +67,8 @@ public class MessageSocketController { //socket 용
         return null;
     }
 
-    /*  sendTo대신 convertAndSent 사용
-     *     // /pub/chat/enter 에 메세지가 오면 동작
+    /*  sendTo대신 convertAndSend 사용
+     *     듀// /pub/chat/enter 에 메세지가 오면 동작
      *     @MessageMapping(value = "/chat/enter")
      *     public void enter(ChatRequestDto message){ // 채팅방 입장
      *         message.setMessage(message.getWriter() + "님이 채팅방에 참여하였습니다.");

@@ -1,7 +1,5 @@
 package com.dankook.authchatting.member.application;
 
-import java.util.UUID;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +16,7 @@ public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
 
     @Override
-    public Member getById(UUID id) {
+    public Member getById(Long id) {
         return memberRepository.getById(id);
     }
 }

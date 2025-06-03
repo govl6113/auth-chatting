@@ -1,7 +1,5 @@
 package com.dankook.authchatting.auth.infra.in.web.response;
 
-import java.util.UUID;
-
 import com.dankook.authchatting.auth.domain.Auth;
 import com.dankook.authchatting.member.infra.in.web.response.MemberResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -14,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthResponse {
-    UUID id;
+    Long id;
     MemberResponse member;
     TokenResponse token;
 

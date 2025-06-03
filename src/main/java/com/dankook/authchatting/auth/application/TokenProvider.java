@@ -1,7 +1,5 @@
 package com.dankook.authchatting.auth.application;
 
-import java.util.UUID;
-
 import org.springframework.security.core.Authentication;
 
 import com.dankook.authchatting.auth.domain.Auth;
@@ -14,5 +12,5 @@ public interface TokenProvider {
 
     boolean validation(String token);
 
-    UUID parseMemberId(String token);
+    Long parseMemberId(String token);
 }
